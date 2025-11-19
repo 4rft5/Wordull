@@ -20,7 +20,7 @@ I do not have any affiliation with or connection to The New York Times, The New 
 * Game State and Statistics are saved to the container, allowing for multiple devices to have the same stats and progress (instead of per-browser)
 * Configurable notifications via [Apprise-API](https://github.com/caronc/apprise#supported-notifications) for reminders to do the puzzle if it has not been completed that day (optional).
 * Hard Mode - Functions identical to Wordle hard mode, any revealed hints must be used in subsequent guesses.
-* Statistics are saved in json in the `data/` folder and update with the guess distribution, amount of challenges played, win percentage, current and max streak.
+* Statistics are saved in json in the `data/` folder and update with the guess distribution, amount of games played, win percentage, current and max streak.
 * Share button to copy results of the Wordull to your clipboard to share.
 
 ## Installation
