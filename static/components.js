@@ -288,10 +288,6 @@ class GameApp extends HTMLElement {
                                     <input type="number" id="import-played" min="0" value="0">
                                 </div>
                                 <div class="import-field">
-                                    <label>Win %</label>
-                                    <input type="number" id="import-win-pct" min="0" max="100" value="0">
-                                </div>
-                                <div class="import-field">
                                     <label>Current Streak</label>
                                     <input type="number" id="import-streak" min="0" value="0">
                                 </div>
@@ -302,6 +298,7 @@ class GameApp extends HTMLElement {
                             </div>
                             
                             <p style="font-size: 14px; font-weight: bold; margin: 16px 0 8px;">Guess Distribution</p>
+                            <p style="font-size: 12px; color: var(--color-tone-2); margin: 0 0 8px;">Enter how many games you won in each number of guesses. Failed games will be calculated automatically.</p>
                             <div class="import-grid">
                                 <div class="import-field">
                                     <label>1 Guess</label>
@@ -326,10 +323,6 @@ class GameApp extends HTMLElement {
                                 <div class="import-field">
                                     <label>6 Guesses</label>
                                     <input type="number" id="import-guess-6" min="0" value="0">
-                                </div>
-                                <div class="import-field">
-                                    <label>Failed</label>
-                                    <input type="number" id="import-guess-fail" min="0" value="0">
                                 </div>
                             </div>
                             

@@ -710,7 +710,6 @@ async function testNotification() {
 
 async function saveImportedStats() {
     const played = parseInt(document.getElementById('import-played').value) || 0;
-    const winPct = parseInt(document.getElementById('import-win-pct').value) || 0;
     const streak = parseInt(document.getElementById('import-streak').value) || 0;
     const maxStreak = parseInt(document.getElementById('import-max-streak').value) || 0;
     
@@ -718,7 +717,6 @@ async function saveImportedStats() {
     for (let i = 1; i <= 6; i++) {
         guesses[i.toString()] = parseInt(document.getElementById(`import-guess-${i}`).value) || 0;
     }
-    guesses['fail'] = parseInt(document.getElementById('import-guess-fail').value) || 0;
 
     try {
         const response = await fetch('/api/import-stats', {
@@ -726,7 +724,6 @@ async function saveImportedStats() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 gamesPlayed: played,
-                winPercentage: winPct,
                 currentStreak: streak,
                 maxStreak: maxStreak,
                 guesses: guesses
@@ -738,7 +735,6 @@ async function saveImportedStats() {
         if (response.ok) {
             showToast('Stats imported successfully!', 2000);
             
-            // Hide import section and show complete message
             document.getElementById('import-details').style.display = 'none';
             document.getElementById('import-complete').style.display = 'block';
             document.getElementById('toggle-import-btn').style.display = 'none';

@@ -67,7 +67,6 @@ class Config(BaseModel):
 
 class ImportStats(BaseModel):
     gamesPlayed: int
-    winPercentage: int
     currentStreak: int
     maxStreak: int
     guesses: dict
@@ -400,15 +399,22 @@ async def import_statistics(import_data: ImportStats):
     """Import existing Wordle statistics"""
     total_wins = sum(import_data.guesses.get(str(i), 0) for i in range(1, 7))
     
+    total_failed = import_data.gamesPlayed - total_wins
+    
+    guesses_with_fail = import_data.guesses.copy()
+    guesses_with_fail['fail'] = total_failed
+    
     stats = Stats(
         gamesPlayed=import_data.gamesPlayed,
         gamesWon=total_wins,
-        winPercentage=import_data.winPercentage,
+        winPercentage=0,
         currentStreak=import_data.currentStreak,
         maxStreak=import_data.maxStreak,
-        guesses=import_data.guesses,
+        guesses=guesses_with_fail,
         averageGuesses=0
     )
+    
+    stats.winPercentage = round(stats.gamesWon / stats.gamesPlayed * 100) if stats.gamesPlayed > 0 else 0
     
     if stats.gamesWon > 0:
         total_guesses = sum(int(k) * v for k, v in stats.guesses.items() if k != "fail")
