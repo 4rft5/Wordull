@@ -17,6 +17,7 @@ I do not have any affiliation with or connection to The New York Times, The New 
 ## Features
 * Configurable timezone to ensure that the word is updated at midnight each day (from the official NYTimes json).
 * Import statistics from the original NYTimes Wordle in the Settings page (optional).
+* Game State and Statistics are saved to the container, allowing for multiple devices to have the same stats and progress (instead of per-browser)
 * Configurable notifications via [Apprise-API](https://github.com/caronc/apprise#supported-notifications) for reminders to do the puzzle if it has not been completed that day (optional).
 * Hard Mode - Functions identical to Wordle hard mode, any revealed hints must be used in subsequent guesses.
 * Statistics are saved in json in the `data/` folder and update with the guess distribution, amount of challenges played, win percentage, current and max streak.
@@ -28,6 +29,14 @@ I do not have any affiliation with or connection to The New York Times, The New 
 3. Run `docker compose up -d`
 4. Configure Settings
 5. Enjoy!
+
+## Screenshots
+
+### Main Page
+<img width="256" height="457" alt="image" src="https://github.com/user-attachments/assets/8f288d59-7d1d-4480-b029-4680215bf6cd" />
+
+### Statistics Page
+<img width="252" height="224" alt="image" src="https://github.com/user-attachments/assets/b08984ee-b00e-4b7a-90be-bd84651b665d" />
 
 ## Contributions
 I don't really see how more features can be added to this, but if you want to add something or clean up code, feel free to open a PR on this repo.
