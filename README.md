@@ -1,5 +1,5 @@
 # Wordull
-A selfhosted Wordle Clone that uses the actual NYT word, import stats, and reminder notifications.
+A selfhosted Wordle Clone using FastAPI and Uvicorn. 
 
 ## About
 Wordull is a simple clone of Wordle that takes design inspiration from the [2022 version of Wordle](https://archive.org/details/wordle-20220202) from before the New York Times bought it out.
