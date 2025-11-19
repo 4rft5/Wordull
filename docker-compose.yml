@@ -1,0 +1,11 @@
+services:
+  wordull:
+    image: ghcr.io/4rft5/wordull:latest
+    container_name: wordull
+    ports:
+      - "2309:2309"
+    volumes:
+      - ./data:/data
+    environment:
+      - TZ=America/Denver
+    restart: unless-stopped
